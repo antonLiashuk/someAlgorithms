@@ -1,0 +1,26 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+
+/* 
+The first letters of input string value is being changed from lower case to upper case.  
+*/
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String string = reader.readLine();//"должна заменять в тексте первые буквы всех слов на заглавные"
+        String[] arr = string.trim().split("\\s+");
+        ArrayList<String> arrayList = new ArrayList<>();
+        for(int i = 0; i < arr.length; i++){
+            char[] charArr = arr[i].toCharArray();
+            charArr[0] = Character.toUpperCase(charArr[0]);
+            for(int n =0; n < charArr.length; n++)
+            {
+                System.out.print(charArr[n]);
+            }
+            System.out.print(" ");
+        }
+    }
+}
