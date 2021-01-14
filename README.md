@@ -8,3 +8,15 @@
 
 
 3. Third program called "CountLetters" take an input from user (this program takes from user 10 string values), and algorythms count the letters that occurre in user's input String values. 
+4. Fourh application takes an input from user , for example : (Apple
+                                                               1
+                                                               Bob
+                                                               3
+                                                               Strawberries
+                                                               22
+                                                               0
+                                                               Melon) and sorts this text in the following way : text is sorting in ascending order, and numbers are sorting in                                                                                                                                                                    descending order. 
+5.
+                                                               
+                                                               
+                                                               
