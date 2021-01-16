@@ -1,0 +1,59 @@
+public class Solution {
+        public static void main(String[] args) throws Exception {
+            ArrayList<String> stringArrayList = scanInput();
+
+            System.out.println(stringArrayList);
+        }
+        public static ArrayList<String> scanInput() throws Exception {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            ArrayList<String> arrayList = new ArrayList<>();
+            String name;
+            char[] toCharArray = null;
+            System.out.println("Wprowadz 0 zeby wyswietlic arrayList");
+            while((name = reader.readLine()) != null){
+                boolean continueRequest = false;
+                if(name.isEmpty()){
+                    System.out.println("Pusta linia, sprobuj jeszcze raz : ");
+                    continue;
+                }else if(name.charAt(0) == '0'){
+                    for(String element : arrayList){
+                        System.out.println(element);
+                    }
+                    System.out.println("Chcesz kontynuowac?");
+                    System.out.println("1 - Tak");
+                    System.out.println("2 - Nie");
+//                    continueRequest = true;
+                    while((name = reader.readLine()) != null ){
+                        if(name.isEmpty()){
+                            System.out.println("Pusta linia, sprobuj jeszcze raz : ");
+                            continue;
+                        }else if(name.charAt(0) == '1'){
+                            continueRequest = true;
+                            break;
+                        }else if(name.charAt(0) == '2'){
+                            return arrayList;
+                        }
+                    }
+//                    continue;
+                }
+                if(continueRequest == true){
+                    continue;
+                }
+                boolean isText = true;
+                for(int i = 0 ; i < name.length(); i++){
+                    if(name.charAt(i) < 65 || (name.charAt(i) > 90 && name.charAt(i) < 97) || name.charAt(i) > 122){
+                        System.out.println("Wartosc pobierana z klawiatury powinna byc tekstem.");
+                        isText = false;
+                        break;
+                    }
+                }
+                if(isText == false){
+                    System.out.println("Sprobuj jezcze raz : ");
+                    continue;
+                }
+                arrayList.add(name);
+            }
+            return arrayList;
+        }
+    }
+
